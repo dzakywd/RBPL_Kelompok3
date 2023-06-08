@@ -28,3 +28,12 @@ Route::controller(adminController::class)->group(function () {
     Route::post('/upload/proses', 'uploadproses');
     Route::get('/admin', 'dashboard_admin');
 });
+
+Route::controller(settingsController::class)->group(function () {
+    Route::get('/settings/reportbug', 'reportbugform');
+    Route::post('/settings/reportbug/success', [settingsController::class, 'store']);
+    Route::get('/settings/reportbug/success', 'reportbugsuccess');
+    Route::get('/settings', 'settings');
+    Route::get('/settings/aboutus', 'aboutus');
+
+});
