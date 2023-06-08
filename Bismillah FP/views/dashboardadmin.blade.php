@@ -8,13 +8,6 @@
 @section('bawah')
     <div class="container-fluid">
 
-        <!--<div class="row">
-            <div class="col-lg-12 pb-3">
-                <h6 class="text-brand">Project</h6>
-                <h3 class="mb-4">My project during class </h3>
-            </div>
-        </div>-->
-
         <div class="row content">
             <div class=" col-xl-12 col-lg-12">
                 <div class="row">
@@ -98,43 +91,9 @@
               </div>
             </div>
           </div>
-
-        {{-- @foreach($regist_forms as $p)
-        <div class="popup" id="popup">
-            <div class="popup-content">
-                <div class="popup-img">
-                    <img width="90 px" src="{{ url('/POSTER_EVENT_DB/'.$p->eventPoster) }}">
-                </div>
-                <div class="popup-general">
-                    <h4>General Information</h4>
-                    <div class="col-4">
-                        <h5>Event Name</h5>
-                        <p>{{ $p->title }}</p>
-                    </div>
-                    <div class="col-4">
-                        <h5>Location</h5>
-                        <P>{{ $p->eventLocation }}</P>
-                    </div>
-                    <div class="col-4">
-                        <h5>Category</h5>
-                        <P>{{ $p->category }}</P>
-                    </div>
-                </div>
-                <div class="popup-details">
-                    <h5>Event Details</h5>
-                    <p>{{ $p->eventDetail }}</p>
-                </div>
-                <div class="btn">
-                    <button>Approve</button>
-                    <button>Reject</button>
-                </div>
-            </div>
-
-        </div>
-        @endforeach
-    </div> --}}
 @endsection
 </body>
+
 <script>
     $(document).ready(function()
     $(document).on('click', '#set_dtl', function() (
