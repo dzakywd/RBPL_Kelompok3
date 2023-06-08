@@ -39,19 +39,19 @@ class adminController extends Controller
 
 		// menyimpan data file yang diupload ke variabel $file
 		$idcard = $request->file('idcard');
-		$nama_idcard = time()."_".$idcard->getClientOriginalName();
+		$nama_idcard = $idcard->getClientOriginalName();
 
       	    // isi dengan nama folder tempat kemana file diupload
 		$tujuan_idcard = 'ID_CARD_DB';
 		$idcard->move($tujuan_idcard,$nama_idcard);
 
         $payproof = $request->file('payproof');
-		$nama_payproof = time()."_".$payproof->getClientOriginalName();
+		$nama_payproof = $payproof->getClientOriginalName();
         $tujuan_payproof = 'PAYMENT_PROOF_DB';
 		$payproof->move($tujuan_payproof,$nama_payproof);
 
         $poster = $request->file('poster');
-		$nama_poster = time()."_".$poster->getClientOriginalName();
+		$nama_poster = $poster->getClientOriginalName();
         $tujuan_poster = 'POSTER_EVENT_DB';
 		$poster->move($tujuan_poster,$nama_poster);
 
