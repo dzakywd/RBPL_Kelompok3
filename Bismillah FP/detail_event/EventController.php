@@ -15,8 +15,7 @@ class EventController extends Controller
 
     public function detailEvent($id)
     {
-        // return view('detailEvent');
-
+        
         // mengambil data event berdasarkan id yang dipilih
         $event = DB::table('event')->where('id_event',$id)->get();
         $rating = DB::table('rating_review')
