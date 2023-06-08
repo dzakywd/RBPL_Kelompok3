@@ -22,8 +22,7 @@ class EventController extends Controller
         ->join('event', 'rating_review.id_event', '=', 'event.id_event')
         ->join('pengguna', 'rating_review.id_user', '=', 'pengguna.id_user')
         ->where('rating_review.id_event',$id)->get();
-        // $rating = DB::table('rating_review')->where('id_event',$id_r = $id)->get();
-
+        
         // passing data dari event dan rating_review ke detailEVent.blade.php
         return view('detailEVent',['event' => $event, 'rating' => $rating]);
     }
