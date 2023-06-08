@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\adminController;
+use App\Http\Controllers\EventController;
 //use App\Http\Controllers\DBJalanKuyController;
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +33,7 @@ Route::get('/', function () {
     Route::get('/database/cari', 'cari');
 });*/
 
+//controller buat admin
 Route::controller(adminController::class)->group(function () {
     Route::get('/template', 'template');
     Route::get('/registform', 'registform');
@@ -42,4 +44,13 @@ Route::controller(adminController::class)->group(function () {
     Route::post('/upload/proses', 'uploadproses');
     Route::get('/admin/dashboard', 'dashboard_admin');
     Route::get('/admin/dashboard1', 'cobadashboardadmin');
+    
+    Route::get('/admin/refund-form/{id}', 'refundForm');
+    Route::post('/admin/refund-form/upload','uploadRefund');
+});
+
+//controller buat user
+Route::controller(EventController::class)->group(function () {
+    Route::get('discovery', 'discovery');
+    Route::get('/detail-event/{id}', 'detailEvent');
 });
