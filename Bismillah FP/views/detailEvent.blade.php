@@ -85,14 +85,7 @@
             <form action="xxx" method="post" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <input type="hidden" name="id_event" id="id_event" value="{{ $r->id_event }}">
-
-                {{-- <div class="form-group row">
-                    <label class="col-sm-1" for="rating"><b>Rating:</b></label>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="rating" name="rating" placeholder="Enter 1-5 for this event">
-                    </div>
-                    <label class="col-sm-8">out for 5</label>
-                </div> --}}
+                
                 <div class="form-inline">
                     <label for="rating" class="mr-sm-3 mb-3"><b>Rating: </b></label>
                     <input type="number" class="form-control mr-sm-3 mb-3" id="rating" name="rating" placeholder="Enter 1-5 for this event">
