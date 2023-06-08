@@ -8,13 +8,6 @@
 @section('bawah')
     <div class="container-fluid">
 
-        <!--<div class="row">
-            <div class="col-lg-12 pb-3">
-                <h6 class="text-brand">Project</h6>
-                <h3 class="mb-4">My project during class </h3>
-            </div>
-        </div>-->
-
         <div class="row content">
             <div class=" col-xl-12 col-lg-12">
                 <div class="row">
