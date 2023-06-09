@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\adminController;
+use App\Http\Controllers\settingsController;
+use App\Http\Controllers\EventController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +20,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// ini controller admin 
 Route::controller(adminController::class)->group(function () {
     Route::get('/template', 'template');
     Route::get('/registform', 'registform');
@@ -27,8 +30,12 @@ Route::controller(adminController::class)->group(function () {
     Route::get('/database/upload', 'upload');
     Route::post('/upload/proses', 'uploadproses');
     Route::get('/admin', 'dashboard_admin');
+    
+    Route::get('/admin/refund-form/{id}', 'refundForm');
+    Route::post('/admin/refund-form/upload','uploadRefund');
 });
 
+// ini controller user
 Route::controller(settingsController::class)->group(function () {
     Route::get('/settings/reportbug', 'reportbugform');
     Route::post('/settings/reportbug/success', [settingsController::class, 'store']);
@@ -37,3 +44,9 @@ Route::controller(settingsController::class)->group(function () {
     Route::get('/settings/aboutus', 'aboutus');
 
 });
+
+Route::controller(EventController::class)->group(function () {
+    Route::get('discovery', 'discovery');
+    Route::get('/detail-event/{id}', 'detailEvent');
+});
+
