@@ -1,0 +1,21 @@
+Procedure: hitung_event_rating() --> buat aktifin pertama: CALL hitung_event_rating();
+
+DELIMITER //
+CREATE PROCEDURE `hitung_event_rating`()
+BEGIN
+ Create TEMPORARY TABLE temp_table as (
+        SELECT id_event, AVG(rating) as 'event_rating'
+        FROM rating_review
+        GROUP BY id_event);
+    UPDATE event join temp_table
+    on event.id_event = temp_table.id_event
+    SET event.event_rating = temp_table.event_rating;
+END //
+DELIMITER ;
+
+Trigger: after_insert_rating
+
+CREATE TRIGGER after_insert_rating
+AFTER INSERT ON rating_review
+FOR EACH ROW
+CALL hitung_event_rating();
