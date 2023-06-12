@@ -1,73 +1,22 @@
-<!DOCTYPE html>
-<html>
-<head>
+@extends('template')
 
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+@section('atas')
 
-    <!-- jQuery library -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+<br>
+<div class="head-of-DE">
+    <h2><b>
+        <a href="/admin">
+            <iconify-icon icon="mdi:arrow-left-circle" style="vertical-align: -0.175em;"></iconify-icon>
+        </a> Refund Form<b></h2>
+</div>
 
-    <!-- Popper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+@endsection
 
-    <!-- Latest compiled JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+@section('bawah')
 
-    <title>JalanKuy: Refund Form</title>
-    <style>
-        body {background-color: #eceadd;}
-        /* h1 {color: red;}
-        p {color: blue;} */
-
-        .container {
-            padding: 5px 0px 10px 0px;
-        }
-
-        /* .container1 {
-            padding: 10px 20px 0px 20px;
-        } */
-
-        input[type=text], input[type=number], textarea {
-            width: 100%;
-        }
-
-        input[type=date] {
-            width: 50%
-        }
-
-        input[type=text], input[type=number], input[type=date]{
-            height: 30px;
-        }
-
-        input[type=file]{
-            height: 45px;
-        }
-
-        .button1 {
-            background-color: #143362;
-            border: none;
-            color: white;
-            font-size: 10px;
-            cursor: pointer;
-        }
-
-        .button2 {
-            background-color: #FFC68F;
-        }
-
-    </style>
-</head>
-<body>
-
-    <div class="container">
-        <a href="/admin" class="button1" role="button">Back</a>
-        <h1>Refund Form</h1>
-    </div>
-
-	<div class="container">
+	<div class="content-of-RF">
         @foreach($regist_form as $r)
-        <h3>Event Details</h3>
+        <h3><b>Event Details</b></h3>
         <form> {{ csrf_field() }}
 
             <div class="form-group">
@@ -77,7 +26,7 @@
 
             <div class="form-group">
                 <b><label for="location">Location:</label></b>
-                <input type="text" class="form-control" id="location" name="location" placeholder="Enter your event location here" value="{{ $r->location }}" disabled>
+                <input type="text" class="form-control" id="location" name="location" placeholder="Enter your event location here" value="{{ $r->event_location }}" disabled>
             </div>
 
             <div class="form-group">
@@ -90,22 +39,22 @@
                 <input type="number" class="form-control" id="price" name="price" placeholder="Enter 0 if your event is free" value="{{ $r->ticket_price }}" disabled>
             </div>
 
-            <div class="form-group">
-                <table style="width:100%">
-                    <tr>
-                      <td><b><label for="startDate">Start Date:</label></b><br></td>
-                      <td><b><label for="endDate">End Date:</label></b><br></td>
-                    </tr>
-                    <tr>
-                      <td><input type="date" name="startDate" id="startDate" class="form-control" placeholder="DD/MM/YYYY"value="{{ $r->start_date }}" disabled></td>
-                      <td><input type="date" name="endDate" id="endDate" class="form-control" placeholder="DD/MM/YYYY" value="{{ $r->end_date }}" disabled></td>
-                    </tr>
-                  </table>
+            <div class="form-group row">
+                <div class="col-lg-5">
+                    <b><label for="startDate">Start Date:</label></b>
+                    <input type="date" name="startDate" id="startDate" class="form-control" placeholder="DD/MM/YYYY"value="{{ $r->start_date }}" disabled>
+                </div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-5">
+                    <b><label for="endDate">End Date:</label></b>
+                    <input type="date" name="endDate" id="endDate" class="form-control" placeholder="DD/MM/YYYY" value="{{ $r->end_date }}" disabled>
+                </div>
+                <div class="col-lg-1"></div>
             </div>
 
             <div class="form-group">
                 <b><label for="eventDetails">Event Details:</label></b>
-                <textarea rows="5" type="text" class="form-control" id="eventDetails" name="eventDetails" placeholder="Enter description about your event" disabled>{{ $r->event_detail }}</textarea>
+                <textarea rows="5" type="text" class="form-control" id="eventDetails" name="eventDetails" placeholder="Enter description about your event" style="height: 125px" disabled>{{ $r->event_detail }}</textarea>
             </div>
 
             <div class="form-group">
@@ -114,11 +63,12 @@
             </div>
         </form>
         @endforeach
-    </div>
 
-    <div class="container">
+        <br>
+        <br>
+
         @foreach($regist_form as $r)
-        <h3>Rejected Detail</h3>
+        <h3><b>Rejected Detail</b></h3>
         <form action="/admin/refund-form/upload" method="post" enctype="multipart/form-data">
 
             {{ csrf_field() }}
@@ -126,20 +76,19 @@
 
             <div class="form-group">
                 <b><label for="issue">Detail Issue:</label></b>
-                <textarea rows="5" type="text" class="form-control" id="issue" placeholder="Enter the reason for rejecting this event" name="issue"></textarea>
+                <textarea rows="5" type="text" class="form-control" id="issue" placeholder="Enter the reason for rejecting this event" name="issue" style="height: 100px"></textarea>
             </div>
 
             <div class="form-group">
-                <b><label for="refund_proof">Proof of Refund:</label></b><br>
-                <input type="file" class="form-control" id="refund_proof" placeholder="Enter the reason for rejecting this event" name="refund_proof">
+                <b><label for="refund_proof">Proof of Refund:</label></b>
+                <input type="file" class="form-control" id="refund_proof" placeholder="Enter the reason for rejecting this event" name="refund_proof" style="height: 100px; width:50%;">
             </div>
 
-            <div class="row justify-content-center">
-                <input type="submit" value="Submit" class="btn button2">
+            <div class="row justify-content-center" style="border:none; color: var(--biru-paling-tua)">
+                <input type="submit" value="Submit" class="btn">
             </div>
         </form>
         @endforeach
     </div>
 
-</body>
-</html>
+@endsection
