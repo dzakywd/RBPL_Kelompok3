@@ -25,5 +25,20 @@ class EventController extends Controller
         // passing data dari event dan rating_review ke detailEVent.blade.php
         return view('detailEVent',['event' => $event, 'rating' => $rating]);
     }
+    
+    public function search(Request $request)
+	{
+		// menangkap data pencarian
+		$search = $request->search;
+
+    		// mengambil data dari table pegawai sesuai pencarian data
+		$event = DB::table('event')
+		->where('eventName','like',"%".$search."%")
+		->paginate();
+
+    		// mengirim data pegawai ke view index
+		return view('resultspage',['event' => $event]);
+
+	}
 
 }
