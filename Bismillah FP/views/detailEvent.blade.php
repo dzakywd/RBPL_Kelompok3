@@ -45,7 +45,7 @@
             </p>
 
             <p><iconify-icon icon="mi:location" width="23" height="23" style="vertical-align: -0.35em;"></iconify-icon>
-                {{ $e->location }}
+                {{ $e->event_location }}
             </p>
 
             <p>Rating: {{ $e->event_rating }} out of 5</p>
