@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
+    <link rel="shortcut icon" href="https://cdn.dribbble.com/userupload/7740149/file/original-48a39c2d5d7d49ba6a384eea98e116f0.png?compress=1&resize=400x333" style="width=100%">
+
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -278,7 +280,14 @@
             background: #F3E177;
             border-radius: 14px;
         }
+         .icon iconify-icon{
+            font-size: 35px;
+            color:#143362;
+        }
 
+        .list {
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -291,8 +300,20 @@
 
                 <div class="list">
                     
+                    <div class="logo" id="logo">
+                        <img src="https://cdn.dribbble.com/userupload/7740475/file/original-1c2b7b06e20f7bc7575aa8c140e77724.png?compress=1&resize=600x400" alt="" style="max-width: 149px; height: auto;">
+                    </div>
+
+                    <div class="menu">
+                        Dashboard
+                    </div>
+
+                </div>
+
+                <div class="list">
+
                     <div class="icon">
-                        <img src="Logo Icon/Dashboard.svg" alt="" id="icon">
+                        <iconify-icon icon="bx:home-alt"></iconify-icon>
                     </div>
 
                     <div class="menu">
@@ -303,7 +324,7 @@
 
                 <div class="list">
                     <div class="icon" style="margin-top: 10px">
-                        <img src="Logo Icon/Discovery.svg" alt="">
+                        <iconify-icon icon="ci:paper-plane"></iconify-icon>
                     </div>
 
                     <div class="menu">
@@ -313,7 +334,7 @@
 
                 <div class="list">
                     <div class="icon">
-                        <img src="Logo Icon/Bookmark.svg" alt="">
+                        <iconify-icon icon="material-symbols:collections-bookmark-outline"></iconify-icon>
                     </div>
 
                     <div class="menu">
@@ -323,7 +344,7 @@
 
                 <div class="list">
                     <div class="icon">
-                        <img src="Logo Icon/Register Event.svg" alt="">
+                        <iconify-icon icon="mdi:event-add"></iconify-icon>
                     </div>
 
                     <div class="menu">
@@ -331,9 +352,9 @@
                     </div>
                 </div>
 
-                <div class="list"> 
+                <div class="list">
                     <div class="icon">
-                        <img src="Logo Icon/Setting.svg" alt="">
+                        <iconify-icon icon="eva:settings-2-outline"></iconify-icon>
                     </div>
 
                     <div class="menu">
@@ -343,7 +364,7 @@
 
                 <div class="list">
                     <div class="icon">
-                        <img src="Logo Icon/Logout.svg" alt="">
+                        <iconify-icon icon="ri:logout-circle-line"></iconify-icon>
                     </div>
 
                     <div class="menu">
