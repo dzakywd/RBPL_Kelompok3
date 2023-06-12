@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `event` (
   `id_event` int(10) UNSIGNED NOT NULL,
   `title` varchar(50) NOT NULL,
-  `location` varchar(50) NOT NULL,
+  `event_location` varchar(50) NOT NULL,
   `category` varchar(15) NOT NULL,
   `ticket_price` int(11) NOT NULL,
   `start_date` date NOT NULL,
@@ -49,7 +49,7 @@ CREATE TABLE `event` (
 -- Dumping data for table `event`
 --
 
-INSERT INTO `event` (`id_event`, `title`, `location`, `category`, `ticket_price`, `start_date`, `end_date`, `event_detail`, `event_logo`, `event_poster`, `event_website`, `event_rating`, `id_form`, `created_at`, `updated_at`) VALUES
+INSERT INTO `event` (`id_event`, `title`, `event_location`, `category`, `ticket_price`, `start_date`, `end_date`, `event_detail`, `event_logo`, `event_poster`, `event_website`, `event_rating`, `id_form`, `created_at`, `updated_at`) VALUES
 (1, 'quia', 'Binjai', 'ratione', 74163, '1982-10-07', '2016-03-27', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', '1684889507_breaking news.png', '1684889507_breaking news.png', 'https://www.google.com', NULL, NULL, NULL, NULL),
 (2, 'et', 'Sukabumi', 'sunt', 75124, '2012-01-03', '2001-11-09', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', '1684889507_breaking news.png', '1684889507_breaking news.png', 'https://www.google.com', NULL, NULL, NULL, NULL),
 (3, 'exercitationem', 'Manado', 'vel', 56940, '1981-09-12', '2015-02-07', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', '1684889507_breaking news.png', '1684889507_breaking news.png', 'https://www.google.com', '2.60', NULL, NULL, NULL),
