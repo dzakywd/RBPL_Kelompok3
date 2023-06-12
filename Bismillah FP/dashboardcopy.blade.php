@@ -288,6 +288,83 @@
         .list {
             cursor: pointer;
         }
+        
+        .btn {
+        margin-top: 15px;
+        padding: 8px 18px;
+        font-weight: 600;
+        margin: 10px;
+        border-radius: 30px;
+        border-collapse: separate;
+        border-spacing: 15px 50px;
+        background: var(--orange-muda);
+        position: right;
+        color: var(--biru-paling-tua);
+        border: none;
+        outline: none;
+        }
+    
+    .btnkotak {
+        margin-top: 15px;
+        padding: 8px 18px;
+        font-weight: 600;
+        margin: 10px;
+        border-radius: 15px;
+        border-collapse: separate;
+        background: var(--orange-muda);
+        position: right;
+        color: var(--biru-paling-tua);
+        border: none;
+        outline: none;
+    }
+    .whitecard {
+    background: white;
+    margin: 10px;
+    border-radius: 30px;
+    border-collapse: separate;
+    border-spacing: 15px 50px;
+    }
+    .darkcard {
+        background:#D9D9D9;
+        margin: 10px;
+        border-radius: 30px;
+        border-collapse: separate;
+        border-spacing: 15px 50px;
+    }
+    .judul1 {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 48px;
+        display: flex;
+        align-items: center;
+        color: var(--biru-paling-tua);
+        padding: 0px;
+    }
+
+    .judul2{
+        left: 131px;
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 27px;
+        line-height: 48px;
+        display: flex;
+        align-items: center;
+        color: var(--biru-paling-tua);
+    }
+
+    .subjudul {
+        font-family: 'Lexend';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+        display: flex;
+        align-items: center;
+        color: #5F647E;
+    }
     </style>
 </head>
 <body>
