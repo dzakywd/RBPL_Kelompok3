@@ -21,6 +21,14 @@ class settingsController extends Controller
     {
         return view ('settings');
     }
+    public function aboutus()
+    {
+        return view ('aboutus');
+    }
+    public function editprofile()
+    {
+        return view ('editprofile');
+    }
     public function store(Request $request)
     {
         $validatedData = $request->validate([
