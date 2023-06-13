@@ -332,7 +332,7 @@
 </head>
 <body>
     <div class="container-fluid" style="background: url('https://img.freepik.com/free-vector/gradient-mountain-landscape_23-2149162007.jpg?w=740&t=st=1684284565~exp=1684285165~hmac=df08a23e4806ce7c2de03875c1c4471337375643ba3815704d925e0817456dbf') no-repeat center fixed; background-size: cover">
-        <div class="row" id="overall">
+        <div class="row" id="overall"> <!--style kalo background polos "background-color: #eceadd; background-size: cover"-->
             <div class="col-2.5" id="sidebar-kiri">
                 <div class="logo" id="logo">
                     <img src="https://cdn.dribbble.com/userupload/7740475/file/original-1c2b7b06e20f7bc7575aa8c140e77724.png?compress=1&resize=600x400" alt="" style="max-width: 149px; height: auto;">
