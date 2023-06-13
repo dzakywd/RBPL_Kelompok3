@@ -365,6 +365,24 @@
         align-items: center;
         color: #5F647E;
     }
+    
+     /* esty punya */
+        .list {
+            cursor: pointer;
+        }
+
+        .bg-settings {
+            background-color:  white;
+            margin: auto;
+            border-radius: 15px;
+        }
+
+        .title-settings {
+            font-family: poppins;
+            font-size: 20px;
+            font-weight: 900;
+            color: #143362;
+        }
     </style>
 </head>
 <body>
