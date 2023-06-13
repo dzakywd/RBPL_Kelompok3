@@ -1,89 +1,66 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Report a Bug</title>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>JalanKuy Inc.</title>
-       <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <link href="https://fonts.googleapis.com/css2?family=Lexend&family=Poppins&display=swap" rel="stylesheet">
-    <!-- jQuery library -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
-
-    <!-- Popper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-
-    <!-- Latest compiled JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <style></style>
-</head>
-
-
-<body style="background: url('https://img.freepik.com/free-vector/gradient-mountain-landscape_23-2149162007.jpg?w=740&t=st=1684284565~exp=1684285165~hmac=df08a23e4806ce7c2de03875c1c4471337375643ba3815704d925e0817456dbf') no-repeat center fixed; background-size: cover">
+@extends('template')
+@section('body')
     <div class="container align-items-center display-flex" style="margin-top: 30px;">
         <div class="row" style="margin-bottom: 20px;">
-            <div class="col col-lg-10 height-100 d-inline-block" style="background-color:  #eceadd; margin: auto; border-radius: 15px;">
-                <h5 style="margin-top: 10px; margin-bottom: 10px;">Settings</h5>
+            <div class="col col-lg-11 height-100 d-inline-block" style="background-color: white; margin: auto; border-radius: 15px;">
+                <h5  class="title-settings" style="margin-top: 10px; margin-bottom: 10px;">Settings</h5>
             </div>
-            <div class="col-md-2 sm-2 justify-content-center">
-                <i class="fa fa-bell-o w-" aria-hidden="true"></i>
+            <div class="col-md-1 sm-2 justify-content-center">
+                <iconify-icon icon="ic:outline-notifications-none" style="font-size: 30px; color: #143362; background-color: #FFC68F; border-radius: 100%; padding: 5px;"></iconify-icon>
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-12 justify-content-center" style="background-color:  #eceadd; margin: auto; border-radius: 15px;">
+            <div class="col-lg-12 justify-content-center bg-settings">
                 <div class="container" style="margin-top: 20px; margin-bottom: 70px; margin-left: 20px; margin-right: 20px;">
                     <div class="row" style="background-color: #C9DAE8; margin-right: 20px; padding: 20px; border-radius: 15px;">
-                        <div class="row">
-                            <table class="table table-borderless">
-                                <tbody>
-                                    <tr>
-                                        <td><h5>Personal Information</h5></td>
-                                        <td><a class="btn text-white" style="font-size: 15px; border-radius: 10px; background-color: #143362;" href="/settings/editprofile">Edit Profile</a></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
                         <table class="table table-borderless">
                             <tbody>
                                 <tr>
-                                    <td>Name</td>
+                                    <td rowspan="5"><iconify-icon icon="iconamoon:profile-circle-fill" style="font-size: 200px; color: #143362; opacity: 50%; vertical-align: ;"></iconify-icon></td>
+                                    <td><h5  class="title-settings">Personal Information</h5></td>
+                                    <td><a class="btn text-white" style="font-size: 15px; border-radius: 10px; background-color: #143362;" href="/settings/editprofile">Edit Profile</a></td>
+                                </tr>
+                                <tr>
+                                    <td style="font-family: poppins; font-weight: bold; color: #666666">Name</td>
                                     <td>Mark Lee</td>
                                 </tr>
                                 <tr>
-                                    <td>Birth date</td>
+                                    <td style="font-family: poppins; font-weight: bold; color: #666666">Birth date</td>
                                     <td>10/09/1999</td>
                                 </tr>
                                 <tr>
-                                    <td>Location</td>
+                                    <td style="font-family: poppins; font-weight: bold; color: #666666">Hobbies</td>
+                                    <td>Music Enthusiast</td>
+                                </tr>
+                                <tr>
+                                    <td style="font-family: poppins; font-weight: bold; color: #666666">Location</td>
                                     <td>Surabaya</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                     <div class="row">
-                        <table class="table table-borderless">
+                        <table class="table table-borderless" style="width: 100%;">
                             <tbody>
                                 <tr>
-                                    <td>Language</td>
-                                    <td>English</td>
+                                    <th></th>
+                                    <th style="width: 70%;"></th>
+                                    <th></th>
                                 </tr>
                                 <tr>
-                                    <td>Contact and About Us</td>
-                                    <td><a href="/settings/aboutus"><button class="btn text-white" style="font-size: 15px; border-radius: 10px; background-color: #143362;">Go</button></a></td>
+                                    <td class="align-middle"><iconify-icon icon="ic:baseline-language" style="font-size: 30px; color: #143362; vertikal-align: -5px;"></iconify-icon></td>
+                                    <td class="align-middle">Language</td>
+                                    <td class="align-middle">English</td>
                                 </tr>
                                 <tr>
-                                    <td>Report a Bug</td>
-                                    <td><a href="/settings/reportbug"><button class="btn text-white" style="font-size: 15px; border-radius: 10px; background-color: #143362;">Go</button></a></td>
+                                    <td class="align-middle"><iconify-icon icon="mdi:information" style="font-size: 30px; color: #143362;"></iconify-icon></td>
+                                    <td class="align-middle">Contact and About Us</td>
+                                    <td class="align-middle"><a href="/settings/aboutus"><iconify-icon icon="ic:round-arrow-outward" style="font-size: 30px; color: #143362;"></iconify-icon></a></td>
+                                </tr>
+                                <tr>
+                                    <td class="align-middle"><iconify-icon icon="material-symbols:bug-report-rounded" style="font-size: 35px; color: #143362;"></iconify-icon></td>
+                                    <td class="align-middle">Report a Bug</td>
+                                    <td class="align-middle"><a href="/settings/reportbug"><iconify-icon icon="ic:round-arrow-outward" style="font-size: 30px; color: #143362;"></iconify-icon></a></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -92,5 +69,4 @@
             </div>
         </div>
     </div>
-</body>
-</html>
+@endsection
