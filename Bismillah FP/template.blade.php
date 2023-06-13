@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="https://cdn.dribbble.com/userupload/7740149/file/original-48a39c2d5d7d49ba6a384eea98e116f0.png?compress=1&resize=400x333" style="width=100%">
-    <title>JalanKuy</title>
 
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -80,14 +79,20 @@
             color: #143362;
             margin-left: 10px;
         }
-
+        .overall {
+            width:100%;
+        }
         #content{
             padding: 30px;
             position: relative;
             overflow-y: scroll;
             max-height: 100%;
+            width: 75%;
+            float:left;
         }
-
+        #content::after{
+            clear:both;
+        }
         #content::-webkit-scrollbar{
             width:0;
         }
@@ -116,6 +121,85 @@
             color: #5F647E;
         }
 
+        #sidebar-kanan{
+            background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("https://img.freepik.com/free-vector/gradient-mountain-landscape_23-2149162007.jpg?w=740&t=st=1684284565~exp=1684285165~hmac=df08a23e4806ce7c2de03875c1c4471337375643ba3815704d925e0817456dbf ");
+            background-size: cover;
+            border-radius: 25px 0 0 25px;
+            width:25%;
+            float:left;
+        }
+
+        #sidebar-kanan .tombol{
+            grid-row: 1;
+            margin-top: 10px;
+        }
+
+        #sidebar-kanan .tombol #hide{
+            margin: 20px;
+            height: 35px;
+            width: 35px;
+        }
+
+        #sidebar-kanan .tombol #lonceng{
+            float: right;
+            margin: 20px;
+            height: 35px;
+            width: 35px;
+        }
+
+        #sidebar-kanan .profilepic{
+            margin: auto auto;
+            width: 120px;
+            height: 120px;
+            background-image: url("Logo Icon/Mark.svg"); /*nanti ambil dr database */
+            background-size: cover;
+            border-radius: 100%;
+        }
+
+        #sidebar-kanan #name{
+            margin: 0 auto;
+            margin-top: 10px;
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 30px;
+            color: #FFFFFF;
+        }
+
+        #sidebar-kanan #status{
+            margin: 0 auto;
+            font-family: 'Lexend';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.85);
+
+        }
+
+        #sidebar-kanan #intro{
+            margin: auto;
+            margin-top: 250px;
+            height: 33px;
+            font-family: 'Lexend';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 30px;
+            align-items: center;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.77);
+        }
+
+        #sidebar-kanan #generate{
+            position: relative;
+            margin-left: 48px;
+            width: 130px;
+            height: 50px;
+            background: #F3E177;
+            border-radius: 14px;
+        }
+
+
         .icon iconify-icon{
             font-size: 30px;
             color:#143362;
@@ -124,6 +208,8 @@
         /* esty punya */
         .list {
             cursor: pointer;
+            padding: 0px;
+            margin:0px;
         }
 
         .bg-settings {
@@ -138,6 +224,110 @@
             font-weight: 900;
             color: #143362;
         }
+
+        /* jopi punya */
+        .btn {
+            margin-top: 15px;
+            padding: 8px 18px;
+            font-weight: 600;
+            margin: 10px;
+            border-radius: 30px;
+            border-collapse: separate;
+            border-spacing: 15px 50px;
+            background: var(--orange-muda);
+            position: right;
+            color: var(--biru-paling-tua);
+            border: none;
+            outline: none;
+        }
+
+        .btnkotak {
+            margin-top: 15px;
+            padding: 8px 18px;
+            font-weight: 600;
+            margin: 10px;
+            border-radius: 15px;
+            border-collapse: separate;
+            background: var(--orange-muda);
+            position: right;
+            color: var(--biru-paling-tua);
+            border: none;
+            outline: none;
+        }
+        .whitecard {
+            background: white;
+            margin: 10px;
+            border-radius: 30px;
+            border-collapse: separate;
+            border-spacing: 15px 50px;
+        }
+        .darkcard {
+            background:#D9D9D9;
+            margin: 10px;
+            border-radius: 30px;
+            border-collapse: separate;
+            border-spacing: 15px 50px;
+        }
+        .judul1 {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 48px;
+            display: flex;
+            align-items: center;
+            color: var(--biru-paling-tua);
+            padding: 0px;
+        }
+
+        .judul2{
+            left: 131px;
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 27px;
+            line-height: 48px;
+            display: flex;
+            align-items: center;
+            color: var(--biru-paling-tua);
+        }
+
+        .subjudul {
+            font-family: 'Lexend';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 22px;
+            display: flex;
+            align-items: center;
+            color: #5F647E;
+        }
+    /* jihan punya */
+        .head-of-DE {
+            background-color: #D9D9D9;
+            color: var(--biru-paling-tua);
+            padding-top: 7px;
+            padding-bottom: 5px;
+            padding-left: 20px;
+            border-radius: 15px;
+            align-items: center;
+        }
+
+        .head-of-DE a, i {
+            color:var(--biru-paling-tua);
+            width: 20px;
+            height: 20px;
+        }
+
+        .content-of-RF {
+            border-radius: 15px;
+            padding-top: 30px;
+            padding-right: 30px;
+            padding-bottom: 30px;
+            padding-left: 30px;
+            background-image: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url("https://img.freepik.com/free-vector/gradient-mountain-landscape_23-2149162007.jpg?w=740&t=st=1684284565~exp=1684285165~hmac=df08a23e4806ce7c2de03875c1c4471337375643ba3815704d925e0817456dbf%20");
+            background-size: cover;
+        }
     </style>
 </head>
 <body>
@@ -149,15 +339,12 @@
                 </div>
 
                 <div class="list">
-
                     <div class="icon">
                         <iconify-icon icon="bx:home-alt"></iconify-icon>
                     </div>
-
                     <div class="menu">
                         Dashboard
                     </div>
-
                 </div>
 
                 <div class="list">
@@ -213,7 +400,63 @@
             <div class="col" id="content">
                 @yield('body')
             </div>
+
+            <div class="col-2" id="sidebar-kanan">
+                <div class="tombol">
+                    <img src="Logo Icon/Hide.svg" alt="" id="hide">
+                    <!-- <a href="javascript:void(0)" class="closebtn" onclick="hide()">
+                        <img src="Logo Icon/Hide.svg" alt="" id="hide">
+                    </a> -->
+                    <!-- <button class="btn" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                        <img src="Logo Icon/Hide.svg" alt="" id="hide">
+                    </button> -->
+                    <!-- <a class="hide" data-toggle="collapse" href="#sidebar-kanan" role="button" aria-expanded="false" aria-controls="sidebar-kanan">
+                        <img src="Logo Icon/Hide.svg" alt="" id="hide">
+                    </a> -->
+                    <img src="Logo Icon/Lonceng.svg" alt="" id="lonceng">
+                </div>
+
+                <div class="profilepic">
+                    <img src="" alt="">
+                </div>
+
+                <div class="text-center" id="name">
+                    Mark Lee
+                </div>
+
+                <div class="text-center" id="status">
+                    Music Enthusiast
+                </div>
+
+                <div class="text-center" id="intro">
+                    <p>Dont know what to do?</p>
+                </div>
+
+                <button type="button" class="btn" id="generate">
+                    Generate!
+                </button>
+            </div>
+        </div>
         </div>
     </div>
+    <script>
+        function show() {
+          document.getElementById("sidebar-kanan").style.width = "300px";
+        //   document.getElementById("content").style.marginLeft = "250px";
+        }
+
+        function hide() {
+          document.getElementById("sidebar-kanan").style.width = "0";
+        //   document.getElementById("content").style.marginLeft = "0";
+        }
+
+        $(document).ready(function () {
+          $("#hide").click(function () {
+            $("#sidebar-kanan").toggle();
+            $("#content").toggleClass("ml-0");
+          });
+        });
+
+        </script>
 </body>
 </html>
