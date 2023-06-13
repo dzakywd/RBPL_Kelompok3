@@ -199,10 +199,21 @@
             border-radius: 14px;
         }
 
-
         .icon iconify-icon{
             font-size: 30px;
             color:#143362;
+        }
+
+        :root {
+            --sidbar-width: 240px;
+            --background-base: #ECEADD;
+            --biru-paling-tua: #143362;
+            --biru-tengah: #3569A5;
+            --biru-muda: #69A8DB;
+            --biru-paling-muda: #C9DAE8;
+            --kuning: #F3E177;
+            --orange-tua: #FD7B46;
+            --orange-muda:#FFC68F;
         }
 
         /* esty punya */
@@ -302,7 +313,22 @@
             align-items: center;
             color: #5F647E;
         }
-    /* jihan punya */
+        
+        /* jihan punya */
+        
+        /* HIDE INPUT NUMBER ARROWS */
+        /* Chrome, Safari, Edge, Opera */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+        }
+
+        /* Firefox */
+        input[type=number] {
+        -moz-appearance: textfield;
+        }
+
         .head-of-DE {
             background-color: #D9D9D9;
             color: var(--biru-paling-tua);
@@ -319,6 +345,78 @@
             height: 20px;
         }
 
+        .content-of-DE {
+            border-radius: 15px;
+            padding-top: 30px;
+            padding-right: 30px;
+            padding-bottom: 30px;
+            padding-left: 30px;
+            background-image: linear-gradient(180deg,rgba(255, 255, 255, 0.2), #d9d9d9), url("https://img.freepik.com/free-vector/gradient-mountain-landscape_23-2149162007.jpg?w=740&t=st=1684284565~exp=1684285165~hmac=df08a23e4806ce7c2de03875c1c4471337375643ba3815704d925e0817456dbf%20");
+            background-size: cover;
+        }
+
+        .content-of-DE h3 {
+            color:var(--biru-paling-tua);
+        }
+
+        .content-of-DE textarea {
+            background-color: var(--biru-paling-muda);
+            border-radius: 15px;
+        }
+
+        .content-of-DE .card {
+            border-radius: 15px;
+            margin-bottom: 20px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .content-of-DE .btn1 {
+            padding: 5px 15px;
+            font-weight: 600;
+            border-radius: 15px;
+            background: var(--orange-muda);
+        }
+
+        .content-of-DE .btn2 {
+            color: white;
+            background: var(--orange-tua);
+            border-radius: 12px;
+            padding: 10px 20px;
+        }
+
+        .copied-message {
+            background: white;
+            border-radius: 15px;
+            padding: 5px 10px;
+            align-items: center;
+            margin: auto;
+            width: 500px;
+            z-index: 1;
+            position: absolute;
+            top: 25px;
+            left: 1px;
+            right: 1px;
+            box-shadow: 0px 10px 15px rgba(0,0,0,0.1);
+            opacity: 0;
+            pointer-events: none;
+            /* transform: translate(-50%, -50%) scale(1.2); */
+            transition: top 0s 0.2s ease-in-out,
+                        opacity 0.2s 0s ease-in-out,
+                        transform 0.2s 0s ease-in-out;
+        }
+
+        .copied-message h5 {
+            color:black;
+            margin: auto;
+        }
+
+        .copied-message p {
+            color:#666666;
+            font-size: 13px;
+            margin: auto;
+        }
+
         .content-of-RF {
             border-radius: 15px;
             padding-top: 30px;
@@ -327,6 +425,14 @@
             padding-left: 30px;
             background-image: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url("https://img.freepik.com/free-vector/gradient-mountain-landscape_23-2149162007.jpg?w=740&t=st=1684284565~exp=1684285165~hmac=df08a23e4806ce7c2de03875c1c4471337375643ba3815704d925e0817456dbf%20");
             background-size: cover;
+        }
+
+        .content-of-RF .btn {
+            padding: 5px 15px;
+            font-weight: 600;
+            border-radius: 10px;
+            background: var(--orange-muda);
+            color: var(--biru-paling-tua);
         }
     </style>
 </head>
