@@ -114,4 +114,38 @@ class adminController extends Controller
 
 
     }
+	
+	public function refundForm($id) {
+	        // mengambil data event dari Regist Form berdasarkan id yang dipilih
+	        $regist_form = DB::table('regist_form')->where('id_form',$id)->get();
+	
+	        // passing data dari Regist Form ke refundForm.blade.php
+	        return view('refundForm',['regist_form' => $regist_form]);
+    	}
+
+    public function uploadRefund(Request $request) {
+
+        $this->validate($request, [
+		'refund_proof' => 'required|file|image|mimes:jpeg,png,jpg|max:2048'
+	]);
+
+        // menyimpan data file yang diupload ke variabel $file
+	$file = $request->file('refund_proof');
+        $nama_file = time()."_".$file->getClientOriginalName();
+
+        // isi dengan nama folder tempat kemana file diupload
+        $tujuan_upload = 'data_file';
+        $file->move($tujuan_upload,$nama_file);
+
+        // ini insert ke database yang TANPA model
+        DB::table('refund_form')->insert([
+            'issue' => $request->issue,
+            'refund_proof' => $nama_file,
+            'id_form' => $request->id_form
+        ]);
+
+        // kembali ke page dashboard admin
+        return redirect('/admin/dashboard');
+
+    }
 }
