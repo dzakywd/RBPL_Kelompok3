@@ -249,6 +249,7 @@
             height: 50px;
             background: #F3E177;
             border-radius: 14px;
+            color: black;
         }
 
 
@@ -483,6 +484,47 @@
         </div>
         </div>
     </div>
+    
+    <div class="modal fade" id="popupEvent" tabindex="-1" role="dialog" aria-labelledby="popupEvent" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content" style="border-radius: 15px;">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" >
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-4">
+                                <img src="Logo Icon/Poster.svg" alt="" style="height: 220px; width: 220px; margin-left:5px; margin-top: 5px">
+                            </div>
+                            <div class="col-8">
+                                <h5 style="font-family: 'Poppins'; font-weight: 700; font-size: 20px; color: #143362">(Nama Event)</h5>
+                                <p style="font-size: 15px; vertical-align:middle; margin:10px 0">
+                                    <iconify-icon icon="ion:location-outline" style="font-size: 25px; color: black; vertical-align:middle"></iconify-icon> (Location)
+                                </p>
+                                <p style="font-size: 15px; vertical-align:middle; margin:0">
+                                    <iconify-icon icon="ant-design:star-filled" style="font-size: 25px; color: black; vertical-align:middle"></iconify-icon> (rating)
+                                </p>
+                                <p style="color:#5F647E; margin-top: 10px; margin-bottom: 10px">
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit in quas cumque unde rem nesciunt amet ipsum itaque..
+                                </p>
+                                <button type="button" class="btn" style="background-color: #FFC68F; border-radius: 10px; margin-left: 0; margin-top: 0; color: black;">
+                                    Detail
+                                </button>
+                                <button type="button" class="btn" style="background-color: #FD7B46; border-radius: 10px; margin-left: 10px; margin-top: 0; color: black;">
+                                    Get a Ticket
+                                </button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <script>
         function show() {
           document.getElementById("sidebar-kanan").style.width = "300px";
