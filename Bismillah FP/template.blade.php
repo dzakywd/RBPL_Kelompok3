@@ -23,7 +23,6 @@
     <style>
         *{
             font-family: 'Lexend', sans-serif;
-            font-size: 15px;
         }
 
         .container-fluid{
