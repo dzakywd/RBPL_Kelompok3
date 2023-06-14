@@ -278,8 +278,8 @@
             color: #143362;
         }
 
-        /* jopi punya */
-        .btn {
+         /* jopi punya */
+         .btn {
             margin-top: 15px;
             padding: 8px 18px;
             font-weight: 600;
@@ -290,6 +290,19 @@
             background: var(--orange-muda);
             position: right;
             color: var(--biru-paling-tua);
+            border: none;
+            outline: none;
+        }
+
+        .btn-modal {
+            margin-top: 15px;
+            padding: 8px 18px;
+            font-weight: 400;
+            margin: 10px;
+            border-radius: 30px;
+            border-collapse: separate;
+            border-spacing: 15px 50px;
+            position: right;
             border: none;
             outline: none;
         }
@@ -307,10 +320,9 @@
             border: none;
             outline: none;
         }
-
         .whitecard {
             background: white;
-            margin: 10px;
+            margin: 10px 10px 20px 10px;
             border-radius: 30px;
             border-collapse: separate;
             border-spacing: 15px 50px;
@@ -326,8 +338,6 @@
             font-family: 'Poppins';
             font-style: normal;
             font-weight: 700;
-            font-size: 32px;
-            line-height: 48px;
             display: flex;
             align-items: center;
             color: var(--biru-paling-tua);
@@ -339,7 +349,6 @@
             font-family: 'Poppins';
             font-style: normal;
             font-weight: 700;
-            font-size: 27px;
             line-height: 48px;
             display: flex;
             align-items: center;
@@ -350,12 +359,32 @@
             font-family: 'Lexend';
             font-style: normal;
             font-weight: 400;
-            font-size: 18px;
-            line-height: 22px;
             display: flex;
             align-items: center;
             color: #5F647E;
         }
+
+        .content-event {
+            text-align: left;
+        }
+
+        .title-modal {
+            font-family: poppins;
+            color: var(--biru-paling-tua);
+            text-decoration: underline;
+            font-weight: 700;
+        }
+
+        .subtitle-form {
+            color: var(--biru-paling-tua);
+            font-size: 12px;
+        }
+
+        .text-event {
+            color: var(--biru-paling-tua);
+        }
+
+
     /* jihan punya */
         .head-of-DE {
             background-color: #D9D9D9;
