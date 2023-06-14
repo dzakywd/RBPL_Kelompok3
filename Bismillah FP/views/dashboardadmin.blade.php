@@ -1,12 +1,12 @@
-@extends('templatenobg')
+@extends('templatenobg2')
 @section('body')
-    <div class="container-fluid">
-        <div class="row content">
-            <div class="col-10">
+    <div class="container display-flex align-items-center">
+        <div class="row">
+            <div class="col-9">
                 <h4 class="judul1">Hello, Admin!</h4>
                 <p class="subjudul">Welcome back and check their request.</p>
             </div>
-            <div class="col-2">
+            <div class="col-3">
                 <iconify-icon icon="ic:outline-notifications-none" style="font-size: 37px; color: black; background-color: #FFC68F; border-radius: 100%; padding: 5px;"></iconify-icon>
                 <iconify-icon icon="iconamoon:profile-circle-fill" style="font-size: 57px; color: #143362; opacity: 70%; vertical-align: -0.09em;"></iconify-icon>
             </div>
@@ -39,8 +39,8 @@
                                 </div>
                             </div>
                             <div class="border-top row">
-                                <div class="col-10"></div>
-                                <div class="col-2">
+                                <div class="col-9"></div>
+                                <div class="col-3">
                                     <a class="btn" data-toggle="modal" data-target="#popupEvent" role="button">Detail</a>
                                 </div>
 
@@ -50,6 +50,7 @@
                     @endforeach
 
                 </div>
+            </div>
         </div>
         <div class="modal fade" id="popupEvent" tabindex="-1" role="dialog" aria-labelledby="popupEvent" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -115,14 +116,15 @@
                         </div>
                     </div>
                 <div class="modal-footer">
-                        <button type="button" class="btn-modal btn-danger" data-dismiss="modal"><iconify-icon icon="bxs:x-circle" style="color:white; vertical-align: -0.1em;"></iconify-icon>   Reject</button>
-                        <button type="button" class="btn-modal btn-success" data-dismiss="modal"><iconify-icon icon="icon-park-solid:check-one" style="color:white; vertical-align: -0.1em;"></iconify-icon>   Accept</button>
+                    <button type="button" class="btn-modal btn-danger" data-dismiss="modal"><iconify-icon icon="bxs:x-circle" style="color:white; vertical-align: -0.1em;"></iconify-icon>   Reject</button>
+                    <button type="button" class="btn-modal btn-success" data-dismiss="modal"><iconify-icon icon="icon-park-solid:check-one" style="color:white; vertical-align: -0.1em;"></iconify-icon>   Accept</button>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+    </div>
 @endsection
-</body>
 {{--
 
 <script>
@@ -142,4 +144,3 @@
 </script>
  --}}
 
-<html>
