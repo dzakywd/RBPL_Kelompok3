@@ -14,23 +14,26 @@ class CreateRegistFormsTable extends Migration
     public function up()
     {
         Schema::create('regist_forms', function (Blueprint $table) {
-            $table->increments('idForm');
-            $table->timestamps();
+            $table->increments('id_form');
             $table->string('organizer');
             $table->string('address');
             $table->string('contact');
             $table->string('email');
-            $table->string('identityCard');
+            $table->string('identity_card');
             $table->string('title');
-            $table->string('eventLocation');
+            $table->string('event_location');
             $table->string('category');
-            $table->string('ticketPrice');
-            $table->date('startDate');
-            $table->date('endDate');
-            $table->string('eventDetail');
-            $table->string('accountNumber');
-            $table->string('paymentProof');
-            $table->string('eventPoster');
+            $table->string('ticket_price');
+            $table->date('start_date');
+            $table->date('end_date');
+            $table->string('event_Detail');
+            $table->string('event_website');
+            $table->string('event_logo');
+            $table->string('event_poster');
+            $table->string('account_number');
+            $table->string('payment_proof');
+            $table->string('status');
+            $table->timestamps();
         });
     }
 
