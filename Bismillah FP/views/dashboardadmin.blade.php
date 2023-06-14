@@ -1,37 +1,49 @@
-@extends('template')
-
-@section('atas')
-<!--<body data-spy="scroll" data-target="#scrollnav">-->
-{{-- <h3 class="text-center">Database Reg. Event</h3> --}}
-@endsection
-
-@section('bawah')
+@extends('templatenobg')
+@section('body')
     <div class="container-fluid">
-
         <div class="row content">
-            <div class=" col-xl-12 col-lg-12">
-                <div class="row">
+            <div class="col-10">
+                <h4 class="judul1">Hello, Admin!</h4>
+                <p class="subjudul">Welcome back and check their request.</p>
+            </div>
+            <div class="col-2">
+                <iconify-icon icon="ic:outline-notifications-none" style="font-size: 37px; color: black; background-color: #FFC68F; border-radius: 100%; padding: 5px;"></iconify-icon>
+                <iconify-icon icon="iconamoon:profile-circle-fill" style="font-size: 57px; color: #143362; opacity: 70%; vertical-align: -0.09em;"></iconify-icon>
+            </div>
+
+            <div class="col-xl-12 col-lg-12">
+                <div class="container">
+                    <h5 class="judul2">Event Listings</h5>
                     @foreach($regist_forms as $p)
                     <div class="col-12" id="set_dtl">
-                        <div class="p-4 rounded-4 shadow-effect white">
-                            <div class="col-5">
-                                <img width="90 px" src="{{ url('/POSTER_EVENT_DB/'.$p->eventPoster) }}" class="img-fluid image">
+                        <div class="p-4 whitecard rounded-4 shadow-effect white">
+                            <div class="row" style="margin-bottom: 20px;">
+                                <div class="col-lg-2">
+                                    <img width="90 px" src="{{ url('/POSTER_EVENT_DB/'.$p->eventPoster) }}" class="img-fluid image">
+                                </div>
+                                <div class="col-lg-10 content-event">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <h4 class="judul1">{{ $p->title }}</h4>
+                                        </div>
+                                        <div class="col-4">
+                                            <p class="text-event">{{ $p->eventLocation }} - {{ $p->category }}</p>
+                                        </div>
+                                        <div class="col-8">
+                                            <p class="text-event"><iconify-icon icon="uil:calender" style="font-size: 20px; color: #143362; vertical-align: -0.2em;"></iconify-icon>  <span>26-25 september 2023</span></p>
+                                        </div>
+                                        <div class="col-12">
+                                            <p class="mb-0 text-truncate text-event" style="max-width: 150px;">{{ $p->eventDetail }}</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-7">
-                                <div class="row">
-                                    <h4>{{ $p->title }}</h4>
-                                </div>
-                                <div class="row">
-                                    {{ $p->eventLocation }} - {{ $p->category }}
-                                </div>
-                                <div class="row">
-                                    <p class="mb-0 text-truncate" style="max-width: 150px;">{{ $p->eventDetail }}</p>
-                                </div>
-                                {{-- <p class="mb-2">{{ $p->eventLocation }} - {{ $p->category }} </p> --}}
-
-                                <p>
+                            <div class="border-top row">
+                                <div class="col-10"></div>
+                                <div class="col-2">
                                     <a class="btn" data-toggle="modal" data-target="#popupEvent" role="button">Detail</a>
-                                </p>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -41,58 +53,77 @@
         </div>
         <div class="modal fade" id="popupEvent" tabindex="-1" role="dialog" aria-labelledby="popupEvent" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-              <div class="modal-content">
+              <div class="modal-content" style="border-radius: 15px;">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="popTitle">Details</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
                 <div class="modal-body">
                     <div class="container-fluid">
-                        <div class="row">
+                        <div class="row" style="background-color: white; margin-bottom: 10px;">
                             <div class="col-12 text-left">
-                                General Information
                                 <div class="row">
                                     <div class="col-2">
                                         <img width="90 px" src="{{ url('/POSTER_EVENT_DB/'.$p->eventPoster) }}" class="img-fluid image">
                                     </div>
-                                    <div class="col-5">
+                                    <div class="col-10">
+                                        <h5 class="title-modal">General Information</h5>
                                         <div class="row">
-                                            <div id="title">
-                                                {{ $p->title }}
+                                            <div class="col-4">
+                                                <div class="form-group">
+                                                    <b><label class="subtitle-form" id="title">Event Name</label></b>
+                                                    <input type="text" class="form-control" id="title" name="title" value="{{ $p->title }}" disabled>
+                                                </div>
+                                                <div class="form-group">
+                                                    <b><label class="subtitle-form" id="ticketprice">Ticket Price</label></b>
+                                                    <input type="text" class="form-control" id="ticketprice" name="" value="50 jt" disabled>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="row">
-                                            <div id="category">
-                                                {{ $p->category}}
+                                            <div class="col-4">
+                                                <div class="form-group">
+                                                    <b><label class="subtitle-form" id="title">Location</label></b>
+                                                    <input type="text" class="form-control" id="title" name="title" value="{{ $p->title }}" disabled>
+                                                </div>
+                                                <div class="form-group">
+                                                    <b><label class="subtitle-form" id="ticketprice">Start Date</label></b>
+                                                    <input type="text" class="form-control" id="ticketprice" name="" value="50 jt" disabled>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="row-5">
-                                        <div>
-                                            {{ $p->startDate}}
+                                            <div class="col-4">
+                                                <div class="form-group">
+                                                    <b><label class="subtitle-form" id="title">Category</label></b>
+                                                    <input type="text" class="form-control" id="title" name="title" value="{{ $p->title }}" disabled>
+                                                </div>
+                                                <div class="form-group">
+                                                    <b><label class="subtitle-form" id="ticketprice">End Date</label></b>
+                                                    <input type="text" class="form-control" id="ticketprice" name="" value="50 jt" disabled>
+                                                </div>
+                                                <div class="form-group">
+                                                    <b><label class="subtitle-form" id="ticketprice">Payment Proof</label></b>
+                                                    <input type="text" class="form-control" id="ticketprice" name="" value="50 jt" disabled>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-
-                                    Event Details:
-                                    <span>
-                                        {{ $p->eventDetail }}
-                                    </span>
-
+                                <div class="col-lg-12">
+                                    <h5 class="title-modal">Event Details</h5>
+                                    <input type="text" class="form-control" id="ticketprice" name="" value="{{ $p->eventDetail }}" disabled>
+                                </div>
                             </div>
                         </div>
                     </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Reject</button>
-                  <button type="button" class="btn btn-primary">Accept</button>
+                        <button type="button" class="btn-modal btn-danger" data-dismiss="modal"><iconify-icon icon="bxs:x-circle" style="color:white; vertical-align: -0.1em;"></iconify-icon>   Reject</button>
+                        <button type="button" class="btn-modal btn-success" data-dismiss="modal"><iconify-icon icon="icon-park-solid:check-one" style="color:white; vertical-align: -0.1em;"></iconify-icon>   Accept</button>
                 </div>
               </div>
             </div>
           </div>
 @endsection
 </body>
+{{--
 
 <script>
     $(document).ready(function()
@@ -109,4 +140,6 @@
     $('#image').prop('src', '/POSTER_EVENT_DB/'+$eventPoster);
 
 </script>
+ --}}
+
 <html>
