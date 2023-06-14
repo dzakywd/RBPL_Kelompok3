@@ -1,6 +1,6 @@
 @extends('template')
 
-@section('atas')
+@section('body')
 
 <script>
     function share_link() {
@@ -21,17 +21,16 @@
 </script>
 
 @foreach($event as $e)
-<br>
 <div class="head-of-DE">
-    <h2><b>
+    <h3><b>
         <a href="/discovery">
             <iconify-icon icon="mdi:arrow-left-circle" style="vertical-align: -0.175em;"></iconify-icon>
-        </a> {{ $e->title }}<b></h2>
+        </a> {{ $e->title }}<b></h3>
 </div>
 @endforeach
-@endsection
 
-@section('bawah')
+<br>
+
 @foreach($event as $e)
 <div class="content-of-DE">
 
@@ -40,26 +39,30 @@
             <img src="{{ url('/data_file/'.$e->event_logo) }}" class="rounded" alt="Event Logo of {{ $e->title }}" width="200px" height="200px">
         </div>
         <div class="col-lg-7" style="margin:auto">
-            <p><iconify-icon icon="material-symbols:calendar-month" width="23" height="23" style="vertical-align: -0.31em;"></iconify-icon>
+            <p><iconify-icon icon="material-symbols:calendar-month" width="23" height="23" style="vertical-align: -0.48em;"></iconify-icon>
                 {{ $e->start_date }} until {{ $e->end_date }}
             </p>
 
-            <p><iconify-icon icon="mi:location" width="23" height="23" style="vertical-align: -0.35em;"></iconify-icon>
+            <p><iconify-icon icon="mi:location" width="23" height="23" style="vertical-align: -0.5em;"></iconify-icon>
                 {{ $e->event_location }}
             </p>
 
-            <p>Rating: {{ $e->event_rating }} out of 5</p>
-            <a href="{{ $e->event_website }}" target="blend" class="btn2" role="button">Get a Ticket</a>
+            <p><iconify-icon icon="ic:round-star-half" width="23" height="23" style="vertical-align: -0.45em;"></iconify-icon>
+                {{ $e->event_rating }} out of 5
+            </p>
 
-            <button style="background: none; border:none; color: var(--biru-paling-tua)" onclick="share_link()">
-                <iconify-icon icon="material-symbols:share" width="28" height="28" style="vertical-align: -0.5em;"></iconify-icon>
-            </button>
+            <a href="{{ $e->event_website }}" target="blend" class="btn2" role="button">Get a Ticket</a>
+            <iconify-icon icon="material-symbols:share" width="28" height="28" style="vertical-align: -0.5em; cursor: pointer" onclick="share_link()"></iconify-icon>
             <input type="text" value="{{url('detail-event/'.$e->id_event)}}" id="website_link" style="opacity: 0; pointer-events: none;">
         </div>
         <div class="col-lg-2">
-            <a style="color: var(--biru-paling-tua)">
-                <iconify-icon icon="material-symbols:bookmark-outline" width="35" height="35" style="float:right"></iconify-icon>
-            </a>
+            <form action="/detail-event/upload-bookmark" method="post" enctype="multipart/form-data">
+                {{ csrf_field() }}
+                <button type="submit" class="btn3">
+                    <input type="hidden" name="id_event" id="id_event" value="{{ $e->id_event }}">
+                    <iconify-icon icon="material-symbols:bookmark-outline" width="35" height="35" style="cursor: pointer"></iconify-icon>
+                </button>
+            </form>
         </div>
     </div>
 
@@ -75,11 +78,11 @@
 
     <br>
 
-    <h3><b>About</b></h3>
+    <h4><b>About</b></h4>
 	<p style="text-align:justify;">{{ $e->event_detail }}</p>
     <br>
 
-    <h3><b>Last Time With Us</b></h3>
+    <h4><b>Last Time With Us</b></h4>
         <div id="foto" class="carousel slide" data-ride="carousel">
 
             <!-- Indicators -->
@@ -113,22 +116,22 @@
     <br>
     <br>
 
-    <h3><b>What People Say About Us</b></h3>
+    <h4><b>What People Say About Us</b></h4>
     @foreach ($rating as $r)
         <div class="card">
             <div class="card-body">
-                <h4><b>{{ $r->nama }}</b></h4>
-                <p>Rating: {{ $r->rating }} out of 5</p>
+                <h5><b>{{ $r->nama }}</b></h5>
+                <p><iconify-icon icon="ic:round-star-half" width="23" height="23" style="vertical-align: -0.45em;"></iconify-icon>
+                    {{ $r->rating }} out of 5
+                </p>
                 <p style="text-align:justify;">{{ $r->review }}</p>
-                <hr>
-                <p>waktu ngasih komen</p>
             </div>
         </div>
     @endforeach
 
     <div class="card">
         <div class="card-body">
-            <h4><b>nama user yang login saat ini</b></h4>
+            <h5><b>nama user yang login saat ini</b></h5>
             <form action="/detail-event/upload-review" method="post" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <input type="hidden" name="id_event" id="id_event" value="{{ $e->id_event }}">
