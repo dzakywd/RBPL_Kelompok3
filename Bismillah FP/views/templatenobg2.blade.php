@@ -170,7 +170,7 @@
         #content #mini-profile{
             max-width: 50px;
             height: 50px;
-            background-image: url("Logo Icon/Mark.svg"); /*nanti ambil dr database*/
+/*             background-image: url("Logo Icon/Mark.svg"); /*nanti ambil dr database*/ */
             background-size: cover;
             border-radius: 100%;
             padding:0;
