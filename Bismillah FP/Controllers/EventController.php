@@ -48,4 +48,48 @@ class EventController extends Controller
 	    
 	    return view('user.discovery', compact('popularEvents', 'recommendedEvents'));
 	}
+
+	public function uploadReview(Request $request)
+	    {
+	        $id = $request->id_event;
+	
+	        // insert data ke table rating_review
+	        DB::table('rating_review')->insert([
+	            'rating' => $request->rating,
+	            'review' => $request->review,
+	            'id_event' => $id,
+	            'id_user' => '1' //id_user harusnya disesuaiin sama profil yang lagi login sekarang
+	        ]);
+	
+	        // balik ke page detail event lagi setelah kirim rating review
+	        return redirect()->to('detail-event/'.$id);
+	    }
+	
+	    public function uploadBookmark(Request $request)
+	    {
+	        $id = $request->id_event;
+	
+	        // insert data ke table bookmark
+	        DB::table('bookmark')->insert([
+	            'id_user' => '1', //id_user harusnya disesuaiin sama profil yang lagi login sekarang
+	            'id_event' => $id
+	        ]);
+	
+	        // balik ke page detail event lagi setelah upload bookmark
+	        return redirect()->to('detail-event/'.$id);
+	    }
+	
+	    public function deleteBookmark(Request $request)
+	    {
+	        $id = $request->id_event;
+	
+	        // delete data dari table bookmark
+	        DB::table('bookmark')
+	            ->where('id_event', $id)
+	            ->where('id_user', '1')
+	            ->delete();
+	
+	        // balik ke page detail event lagi setelah delete bookmark
+	        return redirect()->to('detail-event/'.$id);
+	    }
 }
