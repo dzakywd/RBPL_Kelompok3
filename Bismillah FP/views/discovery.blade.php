@@ -17,7 +17,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Iconify -->
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-   
+
     <style>
         *{
             font-family: 'Lexend', sans-serif;
@@ -28,7 +28,7 @@
         }
 
         #sidebar-kiri{
-            background-color: yellow; 
+            background-color: yellow;
             width: 300px;
             background: white;
             border-radius: 0 25px 25px 0;
@@ -177,10 +177,10 @@
         }
 
         #discover{
-            width:160px; 
-            background-color: #D9D9D9; 
-            mix-blend-mode: darken; 
-            border-radius: 20px; 
+            width:160px;
+            background-color: #D9D9D9;
+            mix-blend-mode: darken;
+            border-radius: 20px;
             border: none;
             outline: none;
             display: flex;
@@ -288,7 +288,7 @@
                 </div>
 
                 <div class="list">
-                    
+
                     <div class="icon">
                         <img src="Logo Icon/Dashboard.svg" alt="" id="icon">
                     </div>
@@ -329,7 +329,7 @@
                     </div>
                 </div>
 
-                <div class="list"> 
+                <div class="list">
                     <div class="icon">
                         <img src="Logo Icon/Setting.svg" alt="">
                     </div>
@@ -382,163 +382,33 @@
 
                 <h2>Popular</h2>
                     <div class="wrapper">
+                        @if ($popularEvents->count() > 0)
+                        @foreach ($popularEvents as $e)
                         <div class="card" id="discover">
                             <img class="card-img-top" src="Logo Icon/Poster.svg" alt="">
                             <div class="card-body">
-                                <h6 class="card-title">(Nama Event)</h6>
+                                <h6 class="card-title">{{ $e->title }}</h6>
                             </div>
                         </div>
-                    
-                        <div class="card" id="discover">
-                            <img class="card-img-top" src="Logo Icon/Poster.svg" alt="">
-                            <div class="card-body">
-                                <h6 class="card-title">(Nama Event)</h6>
-                            </div>
-                        </div>
-                   
-                        <div class="card" id="discover">
-                            <img class="card-img-top" src="Logo Icon/Poster.svg" alt="">
-                            <div class="card-body">
-                                <h6 class="card-title">(Nama Event)</h6>
-                            </div>
-                        </div>
-
-                        <div class="card" id="discover">
-                            <img class="card-img-top" src="Logo Icon/Poster.svg" alt="">
-                            <div class="card-body">
-                                <h6 class="card-title">(Nama Event)</h6>
-                            </div>
-                        </div>
-
-                        <div class="card" id="discover">
-                            <img class="card-img-top" src="Logo Icon/Poster.svg" alt="">
-                            <div class="card-body">
-                                <h6 class="card-title">(Nama Event)</h6>
-                            </div>
-                        </div>
-
-                        <div class="card" id="discover">
-                            <img class="card-img-top" src="Logo Icon/Poster.svg" alt="">
-                            <div class="card-body">
-                                <h6 class="card-title">(Nama Event)</h6>
-                            </div>
-                        </div>
-
-                        <div class="card" id="discover">
-                            <img class="card-img-top" src="Logo Icon/Poster.svg" alt="">
-                            <div class="card-body">
-                                <h6 class="card-title">(Nama Event)</h6>
-                            </div>
-                        </div>
-
-                        <div class="card" id="discover">
-                            <img class="card-img-top" src="Logo Icon/Poster.svg" alt="">
-                            <div class="card-body">
-                                <h6 class="card-title">(Nama Event)</h6>
-                            </div>
-                        </div>
-
-                        <div class="card" id="discover">
-                            <img class="card-img-top" src="Logo Icon/Poster.svg" alt="">
-                            <div class="card-body">
-                                <h6 class="card-title">(Nama Event)</h6>
-                            </div>
-                        </div>
-
-                        <div class="card" id="discover">
-                            <img class="card-img-top" src="Logo Icon/Poster.svg" alt="">
-                            <div class="card-body">
-                                <h6 class="card-title">(Nama Event)</h6>
-                            </div>
-                        </div>
-
-                        <div class="card" id="discover">
-                            <img class="card-img-top" src="Logo Icon/Poster.svg" alt="">
-                            <div class="card-body">
-                                <h6 class="card-title">(Nama Event)</h6>
-                            </div>
-                        </div>
-                    </div> 
+                        @else
+                            <p>No popular events found.</p>
+                        @endif
+                        @endforeach
 
                     <h2>Recommended</h2>
                     <div class="wrapper">
+                        @if ($recommendedEvents->count() > 0)
+                        @foreach ($recommendedEvents as $event)
                         <div class="card" id="discover">
                             <img class="card-img-top" src="Logo Icon/Poster.svg" alt="">
                             <div class="card-body">
-                                <h6 class="card-title">(Nama Event)</h6>
+                                <h6 class="card-title">{{ $e->title }}</h6>
                             </div>
                         </div>
-                    
-                        <div class="card" id="discover">
-                            <img class="card-img-top" src="Logo Icon/Poster.svg" alt="">
-                            <div class="card-body">
-                                <h6 class="card-title">(Nama Event)</h6>
-                            </div>
-                        </div>
-                   
-                        <div class="card" id="discover">
-                            <img class="card-img-top" src="Logo Icon/Poster.svg" alt="">
-                            <div class="card-body">
-                                <h6 class="card-title">(Nama Event)</h6>
-                            </div>
-                        </div>
-
-                        <div class="card" id="discover">
-                            <img class="card-img-top" src="Logo Icon/Poster.svg" alt="">
-                            <div class="card-body">
-                                <h6 class="card-title">(Nama Event)</h6>
-                            </div>
-                        </div>
-
-                        <div class="card" id="discover">
-                            <img class="card-img-top" src="Logo Icon/Poster.svg" alt="">
-                            <div class="card-body">
-                                <h6 class="card-title">(Nama Event)</h6>
-                            </div>
-                        </div>
-
-                        <div class="card" id="discover">
-                            <img class="card-img-top" src="Logo Icon/Poster.svg" alt="">
-                            <div class="card-body">
-                                <h6 class="card-title">(Nama Event)</h6>
-                            </div>
-                        </div>
-
-                        <div class="card" id="discover">
-                            <img class="card-img-top" src="Logo Icon/Poster.svg" alt="">
-                            <div class="card-body">
-                                <h6 class="card-title">(Nama Event)</h6>
-                            </div>
-                        </div>
-
-                        <div class="card" id="discover">
-                            <img class="card-img-top" src="Logo Icon/Poster.svg" alt="">
-                            <div class="card-body">
-                                <h6 class="card-title">(Nama Event)</h6>
-                            </div>
-                        </div>
-
-                        <div class="card" id="discover">
-                            <img class="card-img-top" src="Logo Icon/Poster.svg" alt="">
-                            <div class="card-body">
-                                <h6 class="card-title">(Nama Event)</h6>
-                            </div>
-                        </div>
-
-                        <div class="card" id="discover">
-                            <img class="card-img-top" src="Logo Icon/Poster.svg" alt="">
-                            <div class="card-body">
-                                <h6 class="card-title">(Nama Event)</h6>
-                            </div>
-                        </div>
-
-                        <div class="card" id="discover">
-                            <img class="card-img-top" src="Logo Icon/Poster.svg" alt="">
-                            <div class="card-body">
-                                <h6 class="card-title">(Nama Event)</h6>
-                            </div>
-                        </div>
-                    </div> 
+                        @endforeach
+                        @else
+                        <p>No recommended events found.</p>
+                        @endif
 
                     <h2>Near Me</h2>
                     <div class="wrapper" style="margin:0">
@@ -548,20 +418,6 @@
                                 <h6 class="card-title">(Nama Event)</h6>
                             </div>
                         </div>
-                    
-                        <div class="card" id="discover">
-                            <img class="card-img-top" src="Logo Icon/Poster.svg" alt="">
-                            <div class="card-body">
-                                <h6 class="card-title">(Nama Event)</h6>
-                            </div>
-                        </div>
-                   
-                        <div class="card" id="discover">
-                            <img class="card-img-top" src="Logo Icon/Poster.svg" alt="">
-                            <div class="card-body">
-                                <h6 class="card-title">(Nama Event)</h6>
-                            </div>
-                        </div>
 
                         <div class="card" id="discover">
                             <img class="card-img-top" src="Logo Icon/Poster.svg" alt="">
@@ -618,12 +474,26 @@
                                 <h6 class="card-title">(Nama Event)</h6>
                             </div>
                         </div>
-                    </div> 
+
+                        <div class="card" id="discover">
+                            <img class="card-img-top" src="Logo Icon/Poster.svg" alt="">
+                            <div class="card-body">
+                                <h6 class="card-title">(Nama Event)</h6>
+                            </div>
+                        </div>
+
+                        <div class="card" id="discover">
+                            <img class="card-img-top" src="Logo Icon/Poster.svg" alt="">
+                            <div class="card-body">
+                                <h6 class="card-title">(Nama Event)</h6>
+                            </div>
+                        </div>
+                    </div>
             </div>
 
             <div class="col-2" id="sidebar-kanan">
                 <div class="tombol">
-                    <img src="Logo Icon/Hide.svg" alt="" id="hide">  
+                    <img src="Logo Icon/Hide.svg" alt="" id="hide">
                     <img src="Logo Icon/Lonceng.svg" alt="" id="lonceng">
                 </div>
 
@@ -648,7 +518,7 @@
                 </button>
             </div>
         </div>
-        
+
     </div>
 
     <script>
