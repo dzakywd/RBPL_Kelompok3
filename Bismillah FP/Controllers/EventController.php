@@ -40,5 +40,12 @@ class EventController extends Controller
 		return view('resultspage',['event' => $event]);
 
 	}
-
+	
+	public function displayEvents()
+	{
+	    $popularEvents =  Event::whereBetween('rating', [4, 5])->get();
+	    $recommendedEvents = Event::inRandomOrder()->limit(5)->get();
+	    
+	    return view('user.discovery', compact('popularEvents', 'recommendedEvents'));
+	}
 }
