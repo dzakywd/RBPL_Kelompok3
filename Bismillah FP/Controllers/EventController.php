@@ -22,8 +22,15 @@ class EventController extends Controller
         ->join('pengguna', 'rating_review.id_user', '=', 'pengguna.id_user')
         ->where('rating_review.id_event',$id)->get();
 
+	// Check if the event is bookmarked for the current user
+        $isBookmarked = DB::table('bookmark')
+            ->where('id_event', $id)
+            ->where('id_user', '1')
+            ->exists();
+            // ->where('user_id', auth()->user()->id)
+
         // passing data dari event dan rating_review ke detailEVent.blade.php
-        return view('detailEVent',['event' => $event, 'rating' => $rating]);
+        return view('detailEVent',['event' => $event, 'rating' => $rating], compact('isBookmarked'));
     }
     
     public function search(Request $request)
