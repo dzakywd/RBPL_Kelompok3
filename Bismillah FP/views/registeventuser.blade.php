@@ -9,7 +9,6 @@
                 <iconify-icon icon="ic:outline-notifications-none" style="font-size: 28px; color: black; background-color: #FFC68F; border-radius: 100%; padding: 7px;"></iconify-icon>
                 <iconify-icon icon="iconamoon:profile-circle-fill" style="font-size: 50px; color: #143362; opacity: 70%; vertical-align: -0.09em;"></iconify-icon>
             </div>
-
             <div class="col-xl-12 col-lg-12">
                 <div class="row">
                     @foreach($regist_forms as $p)
@@ -25,19 +24,25 @@
                                             <h4 class="judul1">{{ $p->title }}</h4>
                                         </div>
                                         <div class="col-4">
-                                            <p class="text-event">{{ $p->eventLocation }} - {{ $p->category }}</p>
+                                            <p class="text-event">{{ $p->event_location }} - {{ $p->category }}</p>
                                         </div>
                                         <div class="col-8">
                                             <p class="text-event"><iconify-icon icon="uil:calender" style="font-size: 20px; color: #143362; vertical-align: -0.2em;"></iconify-icon>  <span>26-25 september 2023</span></p>
                                         </div>
                                         <div class="col-12">
-                                            <p class="mb-0 text-truncate text-event" style="max-width: 150px;">{{ $p->eventDetail }}</p>
+                                            <p class="mb-0 text-truncate text-event" style="max-width: 150px;">{{ $p->event_Detail }}</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="border-top row d-flex justify-content-end">
-                                <a class="btn" data-toggle="modal" data-target="" role="button">Detail</a>
+                                @if($p->status === 'approved')
+                                    <a href="/detail-event/{{ $p->id_form }}" class="btn btn-success">{{ $p->status }}</a>
+                                @elseif($p->status === 'rejected')
+                                    <a href="/register-event/rejected/detail-issue/{{ $p->id_form }}" class="btn btn-danger">{{ $p->status }}</a>
+                                @else
+                                    <button class="btn" disabled>{{ $p->status }}</button>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -51,22 +56,4 @@
         </div>
     </div>
 @endsection
-{{--
-
-<script>
-    $(document).ready(function()
-    $(document).on('click', '#set_dtl', function() (
-    var title = $(p).data('title'):
-    var category = $(p).data('category');
-    var eventDetail = s(p).data('eventDetail'):
-    var eventLocation = $(p).data('eventLocation');
-    var eventPoster = $(p).data('eventPoster');
-    $('#title' ).text(title);
-    f('#category' ).text(category)
-    $('#eventDetail').text(eventDetail):
-    $('#eventLocation').text(eventLocation);
-    $('#image').prop('src', '/POSTER_EVENT_DB/'+$eventPoster);
-
-</script>
- --}}
 
