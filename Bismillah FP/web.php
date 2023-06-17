@@ -50,3 +50,8 @@ Route::controller(EventController::class)->group(function () {
     Route::get('/detail-event/{id}', 'detailEvent');
 });
 
+
+Route::get('/dashboardjadicopy', function () {
+    return view('dashboardjadicopy');
+});
+
