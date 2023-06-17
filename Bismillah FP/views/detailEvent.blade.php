@@ -27,17 +27,16 @@
             <iconify-icon icon="mdi:arrow-left-circle" style="vertical-align: -0.175em;"></iconify-icon>
         </a> {{ $e->title }}<b></h3>
 </div>
-@endforeach
 
 <br>
 
-@foreach($event as $e)
 <div class="content-of-DE">
 
     <div class="row">
         <div class="col-lg-3">
             <img src="{{ url('/data_file/'.$e->event_logo) }}" class="rounded" alt="Event Logo of {{ $e->title }}" width="200px" height="200px">
         </div>
+
         <div class="col-lg-7" style="margin:auto">
             <p><iconify-icon icon="material-symbols:calendar-month" width="23" height="23" style="vertical-align: -0.48em;"></iconify-icon>
                 {{ $e->start_date }} until {{ $e->end_date }}
@@ -55,14 +54,26 @@
             <iconify-icon icon="material-symbols:share" width="28" height="28" style="vertical-align: -0.5em; cursor: pointer" onclick="share_link()"></iconify-icon>
             <input type="text" value="{{url('detail-event/'.$e->id_event)}}" id="website_link" style="opacity: 0; pointer-events: none;">
         </div>
+
         <div class="col-lg-2">
-            <form action="/detail-event/upload-bookmark" method="post" enctype="multipart/form-data">
+            @if($isBookmarked)
+            <form action="/detail-event/delete-bookmark" method="post" enctype="multipart/form-data">
                 {{ csrf_field() }}
-                <button type="submit" class="btn3">
+                @method('POST')
+                <button type="submit" class="bookmark-event">
                     <input type="hidden" name="id_event" id="id_event" value="{{ $e->id_event }}">
-                    <iconify-icon icon="material-symbols:bookmark-outline" width="35" height="35" style="cursor: pointer"></iconify-icon>
+                    <iconify-icon icon="material-symbols:bookmark" width="35" height="35" style="cursor: pointer"></iconify-icon>
                 </button>
             </form>
+            @else
+                <form action="/detail-event/upload-bookmark" method="post" enctype="multipart/form-data">
+                    {{ csrf_field() }}
+                    <button type="submit" class="bookmark-event">
+                        <input type="hidden" name="id_event" id="id_event" value="{{ $e->id_event }}">
+                        <iconify-icon icon="material-symbols:bookmark-outline" width="35" height="35" style="cursor: pointer"></iconify-icon>
+                    </button>
+                </form>
+            @endif
         </div>
     </div>
 
@@ -153,8 +164,6 @@
             </form>
         </div>
     </div>
-
-    <br>
 
 </div>
 @endforeach
