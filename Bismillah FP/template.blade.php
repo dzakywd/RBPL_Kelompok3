@@ -314,7 +314,7 @@
         }
         
         /* jihan punya */
-        
+
         /* HIDE INPUT NUMBER ARROWS */
         /* Chrome, Safari, Edge, Opera */
         input::-webkit-outer-spin-button,
@@ -332,7 +332,7 @@
             background-color: #D9D9D9;
             color: var(--biru-paling-tua);
             padding-top: 7px;
-            padding-bottom: 5px;
+            padding-bottom: 3px;
             padding-left: 20px;
             border-radius: 15px;
             align-items: center;
@@ -354,8 +354,12 @@
             background-size: cover;
         }
 
-        .content-of-DE h3 {
+        .content-of-DE h4, h5 {
             color:var(--biru-paling-tua);
+        }
+
+        .content-of-DE p {
+            font-size: 13px;
         }
 
         .content-of-DE textarea {
@@ -370,6 +374,10 @@
             padding-right: 10px;
         }
 
+        .content-of-DE iconify-icon {
+            color: var(--biru-paling-tua);
+        }
+
         .content-of-DE .btn1 {
             padding: 5px 15px;
             font-weight: 600;
@@ -382,6 +390,13 @@
             background: var(--orange-tua);
             border-radius: 12px;
             padding: 10px 20px;
+        }
+
+        .content-of-DE .bookmark-event {
+            border: none;
+            outline: none;
+            float: right;
+            background: none;
         }
 
         .copied-message {
