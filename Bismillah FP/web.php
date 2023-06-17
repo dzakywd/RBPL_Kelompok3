@@ -48,6 +48,10 @@ Route::controller(settingsController::class)->group(function () {
 Route::controller(EventController::class)->group(function () {
     Route::get('discovery', 'discovery');
     Route::get('/detail-event/{id}', 'detailEvent');
+
+    Route::post('/detail-event/upload-review','uploadReview');
+    Route::post('/detail-event/upload-bookmark','uploadBookmark');
+    Route::post('/detail-event/delete-bookmark','deleteBookmark');
 });
 
 
