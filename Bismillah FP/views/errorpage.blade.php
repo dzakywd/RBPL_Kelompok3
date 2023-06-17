@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>JalanKuy Inc.</title>
+	<title>Error 404</title>
        <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 
@@ -33,52 +33,52 @@
         background: #ECEADD;
     }
     .konten{
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        display: flex; justify-content: center; align-items: center; text-align: center;
+        flex-direction: column;
+        margin-top: 40px;
     }
     #satu{
         font-family: 'Poppins';
         font-style: normal;
         font-weight: 700;
-        font-size: 140px;
-        text-align: center;
+        font-size: 40px;
         color: #143362;
     }
     #dua{
         font-family: 'Poppins';
         font-style: normal;
         font-weight: 700;
-        font-size: 140px;
-        /* display: flex; */
-        text-align: center;
+        font-size: 70px;
         color: #FD7B46;
+
     }
     #tiga{
         font-family: 'Lexend';
         font-style: normal;
         font-weight: 400;
-        font-size: 30px;
-        line-height: 38px;
-        display: flex;
-        text-align: center;
+        font-size: 25px;
         text-transform: lowercase;
         color: #666666;
     }
     </style>
 </head>
 <body>
-    <a href="/" id="back" class="button ml-5 mt-5">
-    <iconify-icon icon="ion:arrow-back-circle" style="font-size: 60px; color: rgba(20, 51, 98, 0.7);; vertical-align:0px;"></iconify-icon>
-    </a>
-
-    <div class="konten">
-        <p id="satu"> EROR </p>
-        <p id="dua"> 404 </p>
-        <p id="satu"> PAGE NOT FOUND </p>
-        <p id="tiga">The page your are looking for doesn’t exist or some other error occured, go back to dashboard page</p>
+    <div class="container">
+        <div class="row" style="margin-top: 20px;">
+            <div class="col-lg-2">
+                <a href="/" id="back" class="button">
+            <iconify-icon icon="ion:arrow-back-circle" style="font-size: 60px; color: rgba(20, 51, 98, 0.7);; vertical-align:0px;"></iconify-icon>
+            </a>
+            </div>
+            <div class="col-lg-10">
+            </div>
+        </div>
+        <div class="row konten">
+            <p id="satu"> EROR </p>
+            <p id="dua"> 404 </p>
+            <p id="satu"> PAGE NOT FOUND </p>
+            <p id="tiga">The page your are looking for doesn’t exist or some other error occured, go back to dashboard page</p>
+        </div>
     </div>
-
 </body>
 </html>
