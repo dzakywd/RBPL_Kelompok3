@@ -448,6 +448,20 @@
             background: var(--orange-muda);
             color: var(--biru-paling-tua);
         }
+
+        .content-of-bookmark .card {
+            border-radius: 15px;
+            margin-bottom: 20px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .content-of-bookmark .bookmark-event {
+            border: none;
+            outline: none;
+            float: right;
+            background: none;
+        }
     </style>
 </head>
 <body>
