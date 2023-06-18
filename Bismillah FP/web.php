@@ -59,3 +59,8 @@ Route::get('/dashboardjadicopy', function () {
     return view('dashboardjadicopy');
 });
 
+Route::controller(bookmarkController::class)->group(function () {
+    Route::get('/bookmark', 'bookmark');
+    Route::post('/bookmark/delete-bookmark','deleteBookmark');
+});
+
